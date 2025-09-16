@@ -1,5 +1,5 @@
 import type { DefaultError, UseQueryResult } from "@tanstack/react-query";
-import { Button, CircularProgress } from "@mui/material";
+import { Box, Button, CircularProgress, Typography } from "@mui/material";
 
 const DefaultLoadingElement = () => {
   return (
@@ -73,17 +73,33 @@ export default function QueryResolver<
     }
 
     return (
-      <div className="flex items-center justify-center px-4 py-16">
-        <div>
-          <div>
-            <h3>Error</h3>
-            <p>Failed to load data. Try again.</p>
-          </div>
-          <div className="mt-2">
-            <Button onClick={onRefetchHandler}>Try Again</Button>
-          </div>
-        </div>
-      </div>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        paddingX={2}
+        paddingY={8}
+      >
+        <Box>
+          <Typography variant="h4" color="red">
+            Error
+          </Typography>
+          <Typography sx={{ marginTop: 2 }}>
+            Failed to load data. Try again.
+          </Typography>
+        </Box>
+        <Box marginTop={2}>
+          <Button
+            disableElevation
+            onClick={onRefetchHandler}
+            variant="contained"
+            sx={{ textTransform: "none" }}
+          >
+            Try Again
+          </Button>
+        </Box>
+      </Box>
     );
   }
 
