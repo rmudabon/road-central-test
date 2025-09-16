@@ -18,24 +18,7 @@ import {
 } from "@tanstack/react-table";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import z from "zod";
-
-const productSchema = z.object({
-  id: z.coerce.number(),
-  name: z.string(),
-  description: z.string(),
-  price: z.number(),
-  category: z.string(),
-  stock: z.number(),
-  sku: z.string(),
-  image_url: z.string(),
-  rating: z.object({
-    rate: z.number(),
-    count: z.number(),
-  }),
-});
-
-export type Product = z.infer<typeof productSchema>;
+import type { Product } from "../../types/products";
 
 const dummyProducts: Product[] = [
   {
@@ -158,11 +141,12 @@ const columns = [
     id: "rating",
     header: "Rating",
     cell: (info) => info.getValue().rate,
+    sortingFn: (a, b) => a.original.rating.rate - b.original.rating.rate,
     sortUndefined: "last",
   }),
 ];
 
-function DataTable({ data }: { data: Product[] }) {
+export function DataTable({ data }: { data: Product[] }) {
   const table = useReactTable({
     data,
     columns,
@@ -172,7 +156,7 @@ function DataTable({ data }: { data: Product[] }) {
     initialState: {
       sorting: [
         {
-          id: "stock",
+          id: "id",
           desc: true,
         },
       ],
