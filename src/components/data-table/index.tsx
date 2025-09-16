@@ -9,7 +9,6 @@ import {
   TextField,
 } from "@mui/material";
 import {
-  createColumnHelper,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
@@ -19,132 +18,7 @@ import {
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import type { Product } from "../../types/products";
-
-const dummyProducts: Product[] = [
-  {
-    id: 1,
-    name: "Product 1",
-    description: "Description 1",
-    price: 10,
-    category: "Peripherals",
-    stock: 10,
-    sku: "sku-1",
-    image_url: "https://via.placeholder.com/150",
-    rating: {
-      rate: 4.5,
-      count: 10,
-    },
-  },
-  {
-    id: 2,
-    name: "Product 2",
-    description: "Description 2",
-    price: 20,
-    category: "Laptops",
-    stock: 20,
-    sku: "sku-2",
-    image_url: "https://via.placeholder.com/150",
-    rating: {
-      rate: 3.8,
-      count: 5,
-    },
-  },
-  {
-    id: 3,
-    name: "Product 3",
-    description: "Description 3",
-    price: 30,
-    category: "Monitors",
-    stock: 30,
-    sku: "sku-3",
-    image_url: "https://via.placeholder.com/150",
-    rating: {
-      rate: 2.5,
-      count: 3,
-    },
-  },
-  {
-    id: 4,
-    name: "Product 4",
-    description: "Description 4",
-    price: 40,
-    category: "Printers",
-    stock: 40,
-    sku: "sku-4",
-    image_url: "https://via.placeholder.com/150",
-    rating: {
-      rate: 1.5,
-      count: 8,
-    },
-  },
-  {
-    id: 5,
-    name: "Product 5",
-    description: "Description 5",
-    price: 50,
-    category: "Tablets",
-    stock: 50,
-    sku: "sku-5",
-    image_url: "https://via.placeholder.com/150",
-    rating: {
-      rate: 3.5,
-      count: 20,
-    },
-  },
-];
-
-const columnHelper = createColumnHelper<Product>();
-
-const columns = [
-  columnHelper.accessor("id", {
-    id: "id",
-    header: "ID",
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor("sku", {
-    id: "sku",
-    header: "SKU",
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor("name", {
-    id: "name",
-    header: "Name",
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor("price", {
-    id: "price",
-    header: "Price",
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor("category", {
-    id: "category",
-    header: "Category",
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor("stock", {
-    id: "stock",
-    header: "Stock",
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor("description", {
-    id: "description",
-    header: "Description",
-    cell: (info) => info.getValue().slice(0, 50),
-  }),
-  columnHelper.accessor("image_url", {
-    id: "image_url",
-    header: "Image",
-    cell: (info) => <a href={info.getValue()}>Preview</a>,
-    enableSorting: false,
-  }),
-  columnHelper.accessor("rating", {
-    id: "rating",
-    header: "Rating",
-    cell: (info) => info.getValue().rate,
-    sortingFn: (a, b) => a.original.rating.rate - b.original.rating.rate,
-    sortUndefined: "last",
-  }),
-];
+import { columns } from "../../utils/table";
 
 export function DataTable({ data }: { data: Product[] }) {
   const table = useReactTable({
@@ -236,8 +110,4 @@ export function DataTable({ data }: { data: Product[] }) {
       </TableContainer>
     </Paper>
   );
-}
-
-export function SampleDataTable() {
-  return <DataTable data={dummyProducts} />;
 }

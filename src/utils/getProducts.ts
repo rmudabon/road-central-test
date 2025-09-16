@@ -4,7 +4,6 @@ export async function getProducts() {
   try {
     const res = await fetch("https://api.mockae.com/fakeapi/products/");
     const rawData = await res.json();
-    console.log(rawData);
     const schemaResponse = productListSchema.safeParse(rawData);
     if (schemaResponse.success) {
       return schemaResponse.data;
