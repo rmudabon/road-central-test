@@ -105,7 +105,7 @@ function TotalShipments() {
 
 export function ShipmentMockup() {
   return (
-    <div className="container">
+    <main className="container">
       <section className="shipment-card">
         <div className="shipment-card-header">
           <h1 style={{ fontWeight: 600, fontSize: "1.8rem" }}>Shipments</h1>
@@ -122,6 +122,6 @@ export function ShipmentMockup() {
         <TotalShipments />
         <ShipmentTable />
       </section>
-    </div>
+    </main>
   );
 }
