@@ -1,6 +1,6 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules. It also includes a router using [@tanstack/react-router](https://github.com/tanstack/router) to handle routing.
+This template provides a minimal setup to get React and Typescript in Vite as answers for the Road Central Application. It also includes a router using [@tanstack/react-router](https://github.com/tanstack/router) to handle routing.
 
 ## Installation
 
