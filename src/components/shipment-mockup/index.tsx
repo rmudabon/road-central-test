@@ -100,7 +100,7 @@ export function ShipmentMockup() {
     <div className="container">
       <section className="shipment-card">
         <div className="shipment-card-header">
-          <h2 style={{ fontWeight: 600 }}>Shipments</h2>
+          <h2 style={{ fontWeight: 600, fontSize: "1.8rem" }}>Shipments</h2>
           <button className="primary-button" type="button" role="button">
             <Add />
             Add Shipment
