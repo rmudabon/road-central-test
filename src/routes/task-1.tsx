@@ -86,8 +86,10 @@ function SampleDataTable() {
 
 function Task1() {
   return (
-    <Container>
-      <SampleDataTable />
-    </Container>
+    <div id="task-root">
+      <Container>
+        <SampleDataTable />
+      </Container>
+    </div>
   );
 }

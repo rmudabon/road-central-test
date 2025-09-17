@@ -1,0 +1,191 @@
+.container {
+  background-color: #f2f4f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+.container h1,
+.container h2,
+.container h3,
+.container h4,
+.container h5,
+.container h6,
+.container p {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+.shipment-card {
+  max-width: 1280px;
+  width: 90%;
+  background-color: #fefeff;
+  padding: 2em;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #dededf;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.shipment-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+@media screen and (max-width: 768px) {
+  .shipment-card-header {
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+.total-shipment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 1.5em;
+  border-radius: 8px;
+  border: 1px solid #dededf;
+  margin-bottom: 1em;
+}
+
+.shipment-table-container {
+  border-radius: 8px;
+  border: 1px solid #dededf;
+  overflow: auto;
+}
+
+.shipment-table {
+  table-layout: auto;
+  width: 100%;
+  text-align: left;
+  border-spacing: 0;
+}
+
+.shipment-table-header {
+  background-color: #f8fafc;
+}
+
+.shipment-table th,
+.shipment-table td {
+  padding: 1em;
+}
+
+.shipment-table th {
+  color: #424b53;
+  font-weight: 500;
+}
+
+.shipment-table thead th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.shipment-table thead th:last-child {
+  border-top-right-radius: 8px;
+  min-width: 150px;
+}
+
+.shipment-table th:first-child,
+.shipment-table td:first-child {
+  padding-left: 1.5em;
+}
+
+.shipment-table th:last-child,
+.shipment-table td:last-child {
+  padding-right: 1.5em;
+}
+
+.shipment-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.shipment-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+.shipment-table thead tr {
+  border-bottom: 1px solid #dededf;
+}
+
+.shipment-table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid #dededf;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  width: fit-content;
+}
+.in-transit {
+  background-color: var(--primary-mockup-color);
+  color: white;
+}
+
+.delivered {
+  background-color: var(--secondary-mockup-color);
+  color: white;
+}
+
+.pending {
+  background-color: var(--info-mockup-color);
+}
+
+.primary-button {
+  background-color: var(--primary-mockup-color);
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+  transition: all 0.1s ease-in;
+}
+
+.primary-plain-button {
+  background-color: transparent;
+  color: var(--primary-mockup-color);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+  transition: all 0.1s ease-in;
+}
+
+.primary-plain-button:hover {
+  background-color: #ccdef9;
+}
+
+.primary-button:hover {
+  background-color: var(--primary-mockup-color);
+  opacity: 0.8;
+}
+
+.completed-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--secondary-mockup-color);
+  border: 1px solid green;
+}

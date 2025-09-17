@@ -3,10 +3,17 @@ body {
   height: 100%;
 }
 
-#root {
+#task-root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+#root {
+  height: 100%;
+  --primary-mockup-color: #0e5dca;
+  --secondary-mockup-color: #117b56;
+  --info-mockup-color: #f8d38a;
 }
 
 .data-table-container {

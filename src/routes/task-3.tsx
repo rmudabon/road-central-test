@@ -46,10 +46,12 @@ function TableThree() {
 
 function RouteComponent() {
   return (
-    <Box sx={{ display: "flex", gap: 4, flexDirection: "column" }}>
-      <TableOne />
-      <TableTwo />
-      <TableThree />
-    </Box>
+    <div id="task-root">
+      <Box sx={{ display: "flex", gap: 4, flexDirection: "column" }}>
+        <TableOne />
+        <TableTwo />
+        <TableThree />
+      </Box>
+    </div>
   );
 }

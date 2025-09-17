@@ -10,8 +10,10 @@ export const Route = createFileRoute("/task-2")({
 function RouteComponent() {
   const query = useProducts();
   return (
-    <QueryResolver query={query}>
-      {(data) => <DataTable data={data} />}
-    </QueryResolver>
+    <div id="task-root">
+      <QueryResolver query={query}>
+        {(data) => <DataTable data={data} />}
+      </QueryResolver>
+    </div>
   );
 }
