@@ -3,9 +3,11 @@ import { Box, Button, CircularProgress, Typography } from "@mui/material";
 
 const DefaultLoadingElement = () => {
   return (
-    <div className="relative">
+    <Box
+      sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+    >
       <CircularProgress />
-    </div>
+    </Box>
   );
 };
 
