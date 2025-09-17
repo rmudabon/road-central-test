@@ -16,7 +16,7 @@ const dummyData = [
   },
   {
     id: 3,
-    origin: "San Fransisco",
+    origin: "San Francisco",
     destination: "Seattle",
     status: "Pending",
   },
@@ -60,11 +60,19 @@ function ShipmentTable() {
         </table>
       </article>
       <div className="pagination-controls">
-        <button type="button" className="primary-plain-button">
+        <button
+          type="button"
+          aria-label="Previous"
+          className="primary-plain-button"
+        >
           Previous
         </button>
-        <h4 style={{ fontWeight: 500 }}>1</h4>
-        <button type="button" className="primary-plain-button">
+        <p style={{ fontWeight: 500 }}>1</p>
+        <button
+          type="button"
+          className="primary-plain-button"
+          aria-label="Next"
+        >
           Next
           <ChevronRight />
         </button>
@@ -76,7 +84,7 @@ function ShipmentTable() {
 function TotalShipments() {
   return (
     <article className="total-shipment-container">
-      <h3 style={{ fontWeight: 500 }}>Total Shipments</h3>
+      <h2 style={{ fontWeight: 500, fontSize: "1.2rem" }}>Total Shipments</h2>
       <div
         style={{
           display: "flex",
@@ -85,7 +93,7 @@ function TotalShipments() {
           justifyContent: "space-between",
         }}
       >
-        <h2 style={{ fontWeight: 500, fontSize: "2rem" }}>256</h2>
+        <h3 style={{ fontWeight: 500, fontSize: "2rem" }}>256</h3>
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <div className="completed-circle" />
           <p>Completed</p>
@@ -100,8 +108,13 @@ export function ShipmentMockup() {
     <div className="container">
       <section className="shipment-card">
         <div className="shipment-card-header">
-          <h2 style={{ fontWeight: 600, fontSize: "1.8rem" }}>Shipments</h2>
-          <button className="primary-button" type="button" role="button">
+          <h1 style={{ fontWeight: 600, fontSize: "1.8rem" }}>Shipments</h1>
+          <button
+            className="primary-button"
+            type="button"
+            title="Add Shipment"
+            aria-label="Add Shipment"
+          >
             <Add />
             Add Shipment
           </button>

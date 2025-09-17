@@ -9,6 +9,8 @@ export const Route = createFileRoute("/task-2")({
 
 function RouteComponent() {
   const query = useProducts();
+
+  // Using the data table from Task 1
   return (
     <div id="task-root">
       <QueryResolver query={query}>

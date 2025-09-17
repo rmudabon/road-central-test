@@ -150,7 +150,7 @@
   color: #fff;
   border: none;
   padding: 0.5em 1em;
-  border-radius: 0.5em;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -165,7 +165,7 @@
   color: var(--primary-mockup-color);
   border: none;
   padding: 0.5em 1em;
-  border-radius: 0.5em;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   flex-direction: row;

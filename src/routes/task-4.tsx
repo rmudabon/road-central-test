@@ -54,6 +54,7 @@ function FilteredLayout() {
     page: INITIAL_PAGE,
   });
 
+  // Filters are applied at the request to avoid potentially expensive computations client-side.
   const query = useQuery({
     queryKey: ["products", filters],
     queryFn: () => getFilteredProducts(filters),
@@ -69,6 +70,7 @@ function FilteredLayout() {
     setFilters((filters) => ({ ...filters, name: e.target.value }));
   };
 
+  // We debounce to avoid making too many requests per keypress.
   const debouncedSearch = debounce(handleSearch, 250);
 
   return (
@@ -142,9 +144,9 @@ function FilteredLayout() {
 
 function RouteComponent() {
   return (
-    <>
+    <div id="task-root">
       <VirtualizedLayout />
       <FilteredLayout />
-    </>
+    </div>
   );
 }
